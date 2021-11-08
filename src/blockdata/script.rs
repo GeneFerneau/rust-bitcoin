@@ -39,6 +39,7 @@ use policy::DUST_RELAY_TX_FEE;
 #[cfg(feature="bitcoinconsensus")] use core::convert::From;
 #[cfg(feature="bitcoinconsensus")] use OutPoint;
 
+use schnorr;
 use util::ecdsa::PublicKey;
 use util::address::WitnessVersion;
 
@@ -817,6 +818,11 @@ impl Builder {
         } else {
             self.push_slice(&key.key.serialize_uncompressed()[..])
         }
+    }
+
+    /// Pushes a Schnorr public key
+    pub fn push_schnorr_key(self, key: &schnorr::PublicKey) -> Builder {
+        self.push_slice(key.serialize().as_ref())
     }
 
     /// Adds a single opcode to the script
