@@ -17,7 +17,7 @@
 //! Schnorr key types.
 //!
 
-pub use secp256k1::schnorrsig::{PublicKey, KeyPair};
+pub use secp256k1::{XOnlyPublicKey as PublicKey, KeyPair};
 use secp256k1::{Secp256k1, Verification};
 use hashes::Hash;
 use util::taproot::{TapBranchHash, TapTweakHash};

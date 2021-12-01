@@ -819,7 +819,7 @@ mod tests {
     use blockdata::script::Script;
     use network::constants::Network::{Bitcoin, Testnet};
     use util::ecdsa::PublicKey;
-    use secp256k1::schnorrsig;
+    use secp256k1::XOnlyPublicKey;
 
     use super::*;
 

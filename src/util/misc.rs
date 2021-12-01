@@ -40,7 +40,7 @@ mod message_signing {
 
     use hashes::sha256d;
     use secp256k1;
-    use secp256k1::recovery::{RecoveryId, RecoverableSignature};
+    use secp256k1::ecdsa::{RecoveryId, RecoverableSignature};
 
     use util::ecdsa::PublicKey;
     use util::address::{Address, AddressType};
